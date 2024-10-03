@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color: #26265ed8;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .Container{
+            width: 30rem;
+            height: 20rem;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #show {
+            font-size: 20px;
+            padding: 10px 13px;
+            position: absolute;
+            top: 17rem;
+        }
+        .Message{
+            opacity: 0;
+            text-align: center;
+            border-radius: 50%;
+            color: white;
+            position: absolute;
+            bottom: 230px;
+            left: 60px;
+        }
+
+        .showedM{
+            opacity: 1;
+            animation: show .9s ease;
+        }
+        .hide {
+            opacity: 0;
+            transform: translateY(90px);
+            animation: hide .9s ease;
+        }
+        .div {
+            position: absolute;
+            background-image: url('Heart.png');
+            background-size: 100% 100%;
+            width: 30rem;
+            height: 30rem;
+            margin-top: 90px;
+            bottom: -50%;
+            transform: translateY(17%);
+        }
+        @keyframes show {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            } to {
+                opacity: 1;
+            }
+        }
+        @keyframes hide {
+            from {
+                opacity: 1;
+                transform: translateY(0px);
+            } to {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+        }
+    </style>
+    <title>ILY MY!</title>
+</head>
+<body>
+    <div class="Container">
+        <div class="div">
+            <h1 id="Message" class="Message">I Love You Always!
+                <br> My Sarah Mae 💖😘</h1>
+        </div>
+        <button id="show" onclick="show()">Show Secret Message</button>
+    </div>
+
+    <script>
+        const message = document.getElementById("Message")
+        const showBtn = document.getElementById("show")
+        const hideBtn = document.getElementById("hide")
+        const div = document.getElementById("div")
+        function show(){
+            message.classList.add("showedM")
+            showBtn.classList.add("hide")
+        }
+    </script>
+</body>
+</html>
